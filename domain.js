@@ -30,44 +30,44 @@ class Alojamiento {
         this.#fotos = fotos
     }
 
-    get anfitrion (){
+    get anfitrion() {
         return this.#anfitrion
     }
-    get nombre (){
+    get nombre() {
         return this.#nombre
     }
-    get descripcion (){
+    get descripcion() {
         return this.#descripcion
     }
-    get precioPorNoche (){
+    get precioPorNoche() {
         return this.#precioPorNoche
     }
-    get moneda (){
+    get moneda() {
         return this.#moneda
     }
-    get horarioCheckIn (){
+    get horarioCheckIn() {
         return this.#horarioCheckIn
     }
-    get horarioCheckOut (){
+    get horarioCheckOut() {
         return this.#horarioCheckOut
     }
-    get direccion (){
+    get direccion() {
         return this.#direccion
     }
-    get cantHuespedMax (){
+    get cantHuespedMax() {
         return this.#cantHuespedMax
     }
-    get caracteristicas (){
+    get caracteristicas() {
         return this.#caracteristicas
     }
-    get reservas (){
+    get reservas() {
         return this.#reservas
     }
-    get fotos (){
+    get fotos() {
         return this.#fotos
     }
 
-    estasDisponibleEn(rangoDeFechas){
+    estasDisponibleEn(rangoDeFechas) {
         
     }
     
@@ -75,11 +75,11 @@ class Alojamiento {
         return valorMinimo <= this.#precioPorNoche && valorMaximo >= this.#precioPorNoche
     }
 
-    tenesCaracteristica(caracteristica){
+    tenesCaracteristica(caracteristica) {
         return this.#caracteristicas.includes(caracteristica)
     }
 
-    puedenAlojarse(cantHuespedes){
+    puedenAlojarse(cantHuespedes) {
         const cantDisponibles = this.#cantHuespedMax - this.#reservas.length()
         return cantHuespedes <= cantDisponibles
     }
@@ -95,10 +95,10 @@ class RangoFechas {
         this.#fechaFin = fechaFin
     }
     
-    get fechaInicio(){
+    get fechaInicio() {
         return this.#fechaInicio
     }
-    get fechaFin(){
+    get fechaFin() {
         return this.#fechaFin
     }
 }
@@ -144,7 +144,7 @@ class Ciudad {
     #nombre
     #pais
     
-    constructor (nombre, pais){
+    constructor (nombre, pais) {
         this.#nombre = nombre
         this.#pais = pais
     }
@@ -161,7 +161,7 @@ class Ciudad {
 class Pais {
     #nombre
     
-    constructor (nombre){
+    constructor(nombre) {
         this.#nombre = nombre
     }
     
@@ -177,7 +177,7 @@ class CambioEstadoReserva {
     #motivo
     #usuario
 
-    constructor (fecha, estado, reserva, motivo, usuario) {
+    constructor(fecha, estado, reserva, motivo, usuario) {
         this.#fecha = fecha
         this.#estado = estado
         this.#reserva = reserva
@@ -215,7 +215,7 @@ class Reserva {
     #estado
     #precioPorNoche
     
-    constructor (fechaAlta,huesped,alojamiento,rangoDeFechas,precioPorNoche){
+    constructor(fechaAlta,huesped,alojamiento,rangoDeFechas,precioPorNoche) {
         this.#fechaAlta = fechaAlta
         this.#huesped = huesped
         this.#alojamiento = alojamiento
@@ -223,25 +223,25 @@ class Reserva {
         this.#precioPorNoche = precioPorNoche
     }
 
-    actualizarEstado(estadoReserva){
+    actualizarEstado(estadoReserva) {
         this.estado(estadoReserva)
     }
 
-    get estado(){
+    get estado() {
         return this.#estado
     }
     
-    set estado(nuevoEstado){
+    set estado(nuevoEstado) {
         this.#estado = nuevoEstado
     }
 }
 
 class FactoryNotificacion {
-    #crearMensajeSegunEstadoReserva(estado){
+    #crearMensajeSegunEstadoReserva(estado) {
         // TODO
         return true
     }
-    crearSegunReserva(reserva){
+    crearSegunReserva(reserva) {
         // TODO
         return true
     }
@@ -263,7 +263,7 @@ class Notificacion {
         this.#fechaLeida = fechaLeida
     }
     
-    get mensaje(){
+    get mensaje() {
         return this.#mensaje
     }
     
@@ -271,7 +271,7 @@ class Notificacion {
         return this.#usuario
     }
     
-    get fechaAlta(){
+    get fechaAlta() {
         return this.#fechaAlta
     }
 
@@ -290,7 +290,7 @@ class Foto {
     #descripcion
     #path
     
-    constructor (descripcion, path){
+    constructor (descripcion, path) {
         this.#descripcion = descripcion
         this.#path = path
     }
@@ -308,7 +308,7 @@ class Usuario {
     #email
     #tipo
     
-    constructor (nombre, email, tipo ){
+    constructor (nombre, email, tipo ) {
         this.#nombre = nombre
         this.#email = email
         this.#tipo = tipo
